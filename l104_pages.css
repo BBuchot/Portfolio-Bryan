@@ -1,0 +1,593 @@
+/* Importation de la police IBM Plex Sans depuis Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;700&display=swap');
+
+@font-face { /* Importation de la police ProsaGT */
+    font-family: "ProsaGT";
+    src: url("media/ProsaGT.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+header { /* Style du header fixé en haut */
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    gap:1em;
+    padding: 0.5em 1em;
+}
+header h1 { /* Titre dans le header */
+    font-family: "ProsaGT", sans-serif;
+    font-size: 2em;
+    color: #971ae3;
+}
+header h1 a { /* Lien du titre dans le header */
+    text-decoration: none;
+    color: #971ae3;
+}
+.contenu-principal {
+  display: flex;              
+  align-items: flex-start;      /* Aligne le haut des blocs  */
+  justify-content: center;     /* Centre horizontalement l’ensemble */
+  gap: 2em;                    
+  margin-top: 4em;           
+  padding: 20px;
+  background-color: #fec1f5;
+}
+
+/* Bloc latéral */
+aside {
+  width: 14em;
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+aside h2 { /* Titre du bloc latéral */
+  font-family: "ProsaGT", sans-serif;
+  font-size: 2em;
+  color: #3d3a2a;
+}
+aside a { /* Liens dans le bloc latéral */
+  text-decoration: underline;
+  color: #000;
+  font-weight: bold;
+}
+aside a:hover {
+  color: #971ae3; /* Violet au survol */
+  text-decoration: underline;
+}
+
+
+.centre { /* Bloc central */
+  max-width: 48em;
+  flex: 1;
+  text-align: center;
+}
+/* IMAGE DE PROFIL */
+.profile-pic {
+    --size: 180px; 
+
+    width: var(--size);
+    height: var(--size);
+
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         /* crop automatique */
+    object-position: center;   /* focus sur ton visage */
+    display: block;
+}
+
+
+/* Navigation sous le texte */
+main nav {
+  display: flex;
+  justify-content: center;   /* Centre horizontalement */
+  margin-top: 1.5em;         /* Espace au-dessus du menu */
+}
+
+main nav ol { /* Liste horizontale */
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+main nav a { /* Style des boutons de navigation */
+  display: inline-block;
+  background-color: #971ae3;   /* Violet principal */
+  color: white;
+  padding: 1em 2em;
+  border-radius: 9999px;       /* Forme arrondie (pilule) */
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid transparent; 
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+/* Effet au survol */
+main nav a:hover {
+  background-color: white;
+  color: black;
+  border-color: #971ae3;       /* Bordure violette au survol */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+footer { /* Style du footer */
+  display: flex;
+  justify-content: space-between; /* Gauche ↔ Droite */
+  align-items: flex-start;        /* Aligne le haut du texte */
+  padding: 20px 40px;
+  font-size: 0.9em;
+  color: #333;
+  border-top: 1px solid #ccc;     /* Ligne de séparation en haut */
+  background-color: #fff;
+}
+
+/* Partie gauche */
+.footer-left {
+  flex: 1; 
+}
+
+/* Partie droite */
+.footer-right {
+  display: flex;
+  gap: 3em;                       /* Espace entre les blocs Tel / Email / En ligne */
+  text-align: center;
+}
+
+.footer-right p { /* Supprime les marges par défaut des paragraphes */
+  margin: 0;
+}
+
+/* Liens du footer */
+footer a {
+  text-decoration: underline;
+  color: #000;
+  font-weight: bold;
+}
+
+footer a:hover {
+  color: #971ae3; /* Violet au survol */
+  text-decoration: underline;
+}
+
+.background { /* Fond rose derrière les articles */
+    background-color: #fec1f5;
+    padding-top: 6em; 
+    padding-bottom: 2em; 
+}
+
+article h1 { /* Style des titres des articles */
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+
+    font-family: "ProsaGT", sans-serif;
+    font-size: 3em;
+    color: #971ae3;
+    margin-bottom: 0.3em;
+    text-transform: uppercase;
+}
+
+article h1::before { /* Carré violet avant le titre */
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: #971ae3;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+article { /* Style des articles */
+    background-color: white;
+    padding: 3em;
+    margin: 3em auto;
+    width: 60%;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+}
+
+article p, article h2, article cite { /* Texte aligne a gauche dans les articles */
+    text-align: left;
+}
+
+article h2 { /* Sous-titres dans les articles */
+    font-family: "ProsaGT", sans-serif;
+    font-size: 2em;
+    color: #f3a7e6;
+    text-transform: uppercase;
+    margin-top: 2em;
+}
+
+/* NAVIGATION SOUS LE HEADER STYLE BOUTONS VIOLETS */
+.top-nav {
+    margin-top: 4em;        
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+.top-nav a { /* Style des boutons de navigation */
+    background-color: #971ae3;
+    color: white;
+    padding: 0.8em 2em;
+    border-radius: 10px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 1.2em;
+    text-decoration: none;
+    font-weight: bold;
+
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    transition: 0.3s ease;
+}
+
+.top-nav a:hover { /* Effet au survol des boutons */
+    background-color: white;
+    color: #971ae3;
+    border: 2px solid #971ae3;
+}
+.bot-nav { /* Navigation en bas de page */
+
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+.bot-nav a { /* Style des boutons de navigation du bas*/
+    background-color: #971ae3;
+    color: white;
+    padding: 0.8em 2em;
+    border-radius: 10px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 1.2em;
+    text-decoration: none;
+    font-weight: bold;
+
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    transition: 0.3s ease;
+}
+
+.bot-nav a:hover { /* Effet au survol des boutons du bas */
+    background-color: white;
+    color: #971ae3;
+    border: 2px solid #971ae3;
+}
+/* BOUTON FLOTTANT POUR REMONTER EN HAUT */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+
+    background-color: #971ae3;
+    color: white;
+    font-size: 1.8em;
+    font-weight: bold;
+
+    width: 55px;
+    height: 55px;
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    transition: 0.3s ease;
+
+    z-index: 2000; /* au-dessus de tout */
+}
+
+.scroll-top-btn:hover { /* Effet au survol du bouton */
+    background-color: white;
+    color: #971ae3;
+    border: 2px solid #971ae3;
+    transform: translateY(-4px);
+}
+
+#haut, #article2, #article3 { 
+    scroll-margin-top: 9em; /* pour compenser le header fixe */
+}
+
+/* IMAGE DE BANNIERE */
+.article-image {
+    width: 100%;
+    height: 12em;             
+    margin-bottom: 1.2em;      
+    margin-top: 0.3em;          
+
+    overflow: hidden;           
+    border-top-left-radius: 10px; 
+    border-top-right-radius: 10px;
+}
+
+.article-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          
+    object-position: center;    
+    display: block;
+}
+
+/* IMAGE À DROITE */
+
+.img-right {
+    float: right;            
+    width: 16em;             
+    height: 16em;            
+    object-fit: cover;       
+    object-position: center; 
+    margin: 0 0 1em 1.2em;   
+    border-radius: 6px;      
+    display: block;
+}
+
+@media (max-width: 800px) {
+    .img-right {
+        float: none;
+        display: block;
+        margin: 1em auto;
+        width: 12em;
+        height: 12em;
+    }
+}
+
+
+
+/*VIDEOS CENTREE*/
+
+.video-style {
+    width: 60%;           
+    margin: 1.5em auto;       
+}
+
+.video-style video, .video-style iframe {
+    width: 100%;
+    height: 24em;
+    display: block;
+}
+
+@media (max-width: 800px) {
+    .video-style {
+        width: 90%;           
+    }
+}
+
+
+/* --- STYLE POUR LA PAGE WEBOGRAPHIE --- */
+
+
+/* Titre principal Webographie */
+.webo-section h1 {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+
+    font-family: "ProsaGT", sans-serif;
+    font-size: 3em;
+    color: #971ae3;
+    margin-bottom: 0.3em;
+    text-transform: uppercase;
+}
+
+.webo-section h1::before { /* Carré violet avant le titre */
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: #971ae3;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.webo-section p { /* Texte introductif de la webographie */
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 1.4em;
+    color: #3d3a2a;
+    text-align: left;
+    
+}
+
+/* Style du tableau */
+
+/* Centre le tableau dans le fond */
+.webo-table-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+
+/* Style du tableau */
+.webo-table {
+    width: 70%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+}
+
+
+/* En-têtes */
+.webo-table th {
+    background-color: #971ae3;
+    color: white;
+    padding: 1em;
+    text-align: left;
+    font-family: "ProsaGT", sans-serif;
+    font-size: 1.5em;
+    border-right: 2px solid #f3a7e6;
+}
+
+
+/* Cellules */
+.webo-table td {
+    padding: 1em;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 1.2em;
+    border-right: 2px solid #f3a7e6;
+    border-bottom: 2px solid #f3a7e6;
+    word-wrap: break-word;
+}
+.webo-table td a { /* Permet de casser les longs liens */
+    word-break: break-all;
+}
+
+/* Supprime la dernière bordure */
+.webo-table tr:last-child td {
+    border-bottom: none;
+}
+.webo-table td:last-child, .webo-table th:last-child {
+    border-right: none;
+}
+
+/* Liens dans le tableau */
+.webo-table a {
+    color: #971ae3;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.webo-table a:hover { /* Effet au survol des liens */
+    color: black;
+}
+
+
+.webo-nav { /* Navigation sous le tableau */
+    margin-top: 4em;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+.webo-nav a { /* Style des boutons de navigation */
+    background-color: #971ae3;
+    color: white;
+    padding: 0.8em 2em;
+    border-radius: 10px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 1.2em;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    transition: 0.3s ease;
+}
+
+.webo-nav a:hover { /* Effet au survol des boutons */
+    background-color: white;
+    color: #971ae3;
+    border: 2px solid #971ae3;
+}
+/* ===== IMAGE CENTRÉE SOUS LE TABLEAU DE WEBOGRAPHIE ===== */
+
+.bottom-bloc {
+    display: flex;
+    justify-content: center;  
+    margin-top: 2em;           
+    margin-bottom: 2em;    
+    clear:both;    
+}
+
+.img-bot{
+
+    width: 10em;
+    height: 10em;
+    object-fit: cover;         
+    object-position: center;   
+    display: block;
+}
+
+p { /* Style des paragraphes */
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 1.4em;
+    color: #3d3a2a;
+}
+
+h1{ /* Style des titres h1 */
+    font-family: "ProsaGT", sans-serif;
+    font-size: 2.5em;
+    color: #3d3a2a;
+}
+#accroche { /* Style spécifique pour l’accroche sous le header */
+    font-family: "ProsaGT", sans-serif;
+    font-size: 2.4em;
+    color: #3d3a2a;
+}
+
+/* Légendes des bannières et médias */
+.banner-caption,
+.media-caption {
+    display: block;
+    text-align: center;
+    font-size: 0.9em;
+    font-style: italic;
+    color: #555;
+    margin: 0.4em 0 1em 0;
+    opacity: 0.9;
+    position: relative;    
+    z-index: 2;
+}
+
+/* Légende des images flottantes à droite */
+.img-right-caption  {
+    float: right;
+    clear: right;
+    width: 16em;
+    text-align: center;
+    font-size: 0.9em;
+    font-style: italic;
+    opacity: 0.8;
+    margin: 0 0 1em 1.2em;
+}
+
+/* Légende centrée sous l'image du bas de la webographie */
+.img-bot-caption  {
+    text-align: center;
+    font-size: 0.9em;
+    font-style: italic;
+    color: #555;
+    margin-top: -0.5em; 
+    opacity: 0.85;
+}
+/* Couleur des liens dans les légendes */
+.img-right-caption a,
+.media-caption a,
+.img-bot-caption a,
+.banner-caption a {
+    color: #555 !important;        
+    text-decoration: underline;    
+}
+/* Couleur des liens visités dans les légendes */
+.img-right-caption a:visited, 
+.media-caption a:visited,
+.img-bot-caption a:visited,
+.banner-caption a:visited {
+    color: #555 !important;
+}
+/* Adaptation mobile des légendes d'images flottantes */
+@media (max-width: 800px) {
+    .media-caption.img-right-caption.img-bot-caption {
+        float: none;
+        width: auto;
+        margin: 1em auto;
+    }
+}
+
